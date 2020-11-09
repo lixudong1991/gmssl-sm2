@@ -277,6 +277,7 @@ static int setPriKey(const char *prikey,EC_KEY** pkey, int issetpubkey)
 			{
 				ret = EC_KEY_set_public_key(*pkey, pubpoint);
 			}
+			EC_POINT_free(pubpoint);
 		}
 	}
 	BN_free(k);
